@@ -2,9 +2,12 @@ import os
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from dotenv import load_dotenv
+
 
 BACKEND_DIR = Path(__file__).resolve().parents[2]
 PROJECT_DIR = BACKEND_DIR.parent
+load_dotenv(BACKEND_DIR / ".env")
 
 
 def _normalize_database_url(url: str) -> str:
